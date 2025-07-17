@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,27 +19,28 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'My Gallery', href: '/gallery' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Home', href: '#home' },
+    { name: 'My Gallery', href: '#gallery' },
+    { name: 'About Us', href: '#about' },
+    { name: 'Contact', href: '#contact' },
+    { name: 'Blog', href: '#blog' },
   ];
 
   const scrollToSection = (sectionId: string) => {
-    if (location.pathname === '/') {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const handleNavClick = (item: typeof navItems[0]) => {
     setIsMenuOpen(false);
     
-    // Handle home page section links
-    if (location.pathname === '/' && item.href.startsWith('#')) {
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      window.location.href = '/' + item.href;
+    } else {
+      // Remove the # from href and scroll to section
       scrollToSection(item.href.substring(1));
     }
   };
@@ -51,24 +52,26 @@ const Navigation = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <button 
+            onClick={() => scrollToSection('home')}
+            className="flex items-center space-x-2"
+          >
             <Camera className="h-8 w-8 text-white" />
             <span className="text-xl lg:text-2xl font-playfair font-bold text-white">
               Didack Media
             </span>
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.href}
                 onClick={() => handleNavClick(item)}
                 className="text-white hover:text-gray-300 transition-colors duration-200 font-medium"
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
           </div>
 
@@ -88,14 +91,13 @@ const Navigation = () => {
           <div className="md:hidden absolute top-full left-0 right-0 nav-blur bg-black/90 border-t border-white/10">
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  to={item.href}
                   onClick={() => handleNavClick(item)}
-                  className="block text-white hover:text-gray-300 transition-colors duration-200 font-medium text-lg"
+                  className="block text-white hover:text-gray-300 transition-colors duration-200 font-medium text-lg w-full text-left"
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </div>
           </div>
