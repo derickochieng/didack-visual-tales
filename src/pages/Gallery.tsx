@@ -1,11 +1,19 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
+import { useSearchParams } from 'react-router-dom';
 
 const Gallery = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('all');
+
+  useEffect(() => {
+    const category = searchParams.get('category');
+    if (category) {
+      setActiveCategory(category);
+    }
+  }, [searchParams]);
 
   const galleryCategories = {
     humanitarian: [
@@ -96,6 +104,28 @@ const Gallery = () => {
         category: 'Environment & Climate'
       }
     ],
+    farming: [
+      {
+        url: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Organic Farming Initiative',
+        category: 'Farming'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Agricultural Innovation',
+        category: 'Farming'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Rural Farming Community',
+        category: 'Farming'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Harvest Documentation',
+        category: 'Farming'
+      }
+    ],
     realEstate: [
       {
         url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -135,9 +165,19 @@ const Gallery = () => {
     return galleryCategories[activeCategory] || [];
   };
 
+  const handleCategoryChange = (categoryKey: string) => {
+    setActiveCategory(categoryKey);
+    if (categoryKey === 'all') {
+      setSearchParams({});
+    } else {
+      setSearchParams({ category: categoryKey });
+    }
+  };
+
   const categories = [
     { key: 'all', label: 'All Work' },
     { key: 'humanitarian', label: 'Humanitarian Works' },
+    { key: 'farming', label: 'Farming' },
     { key: 'corporateEvents', label: 'Corporate Events' },
     { key: 'conferences', label: 'Conference Work' },
     { key: 'environment', label: 'Environment & Climate' },
@@ -157,7 +197,7 @@ const Gallery = () => {
             </h1>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Explore our diverse portfolio showcasing authentic moments across humanitarian work, 
-              corporate events, environmental documentation, and real estate photography.
+              farming, corporate events, environmental documentation, and real estate photography.
             </p>
           </div>
         </div>
@@ -170,7 +210,7 @@ const Gallery = () => {
             {categories.map((category) => (
               <Button
                 key={category.key}
-                onClick={() => setActiveCategory(category.key)}
+                onClick={() => handleCategoryChange(category.key)}
                 variant={activeCategory === category.key ? "default" : "outline"}
                 className={`transition-all duration-300 ${
                   activeCategory === category.key 

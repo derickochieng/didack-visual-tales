@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ContactSection = () => {
   return (
@@ -13,9 +14,14 @@ const ContactSection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white mb-6">
             Let's Create Together
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-4">
             Ready to tell your story? Get in touch with us to discuss your next project
           </p>
+          <Link to="/contact">
+            <Button className="bg-white text-black hover:bg-gray-200 transition-all duration-300 mt-4">
+              Get in Touch
+            </Button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

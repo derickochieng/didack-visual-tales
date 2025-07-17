@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const GalleryPreview = () => {
   const galleryImages = [
@@ -74,10 +75,12 @@ const GalleryPreview = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-white text-black hover:bg-gray-200 transition-all duration-300 px-8 py-4">
-            <ExternalLink className="mr-2 h-5 w-5" />
-            View Full Gallery
-          </Button>
+          <Link to="/gallery">
+            <Button size="lg" className="bg-white text-black hover:bg-gray-200 transition-all duration-300 px-8 py-4">
+              <ExternalLink className="mr-2 h-5 w-5" />
+              View Full Gallery
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
