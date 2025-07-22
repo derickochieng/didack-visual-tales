@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const ClientsSection = () => {
   const clients = [
@@ -33,114 +32,46 @@ const ClientsSection = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 20,
-      scale: 0.9,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-    },
-  };
+  // Duplicate the clients array for seamless loop
+  const duplicatedClients = [...clients, ...clients];
 
   return (
-    <section id="clients" className="section-padding bg-gradient-to-b from-background to-secondary/20">
+    <section id="clients" className="section-padding bg-gradient-to-b from-background to-secondary/20 overflow-hidden">
       <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-6">
             Our Trusted Clients
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We're proud to work with leading organizations making a positive impact worldwide
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12"
-        >
-          {clients.map((client, index) => (
-            <motion.div
-              key={client.name}
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.1,
-                y: -10,
-                transition: { duration: 0.3 },
-              }}
-              className="group relative"
-            >
-              <div className="glass rounded-xl p-6 lg:p-8 h-32 lg:h-40 flex items-center justify-center hover-lift transition-all duration-300 hover:border-primary/30">
-                <img
-                  src={client.logo}
-                  alt={`${client.name} logo`}
-                  className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:filter-none group-hover:brightness-100"
-                />
-                
-                {/* Overlay with client name on hover */}
-                <div className="absolute inset-0 bg-primary/10 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center p-4">
-                  <span className="text-primary font-medium text-center text-sm">
-                    {client.name}
-                  </span>
+        {/* Marquee Container */}
+        <div className="relative">
+          {/* Gradient overlays for seamless fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10"></div>
+          
+          {/* Marquee wrapper */}
+          <div className="overflow-hidden">
+            <div className="flex animate-marquee hover:pause-marquee">
+              {duplicatedClients.map((client, index) => (
+                <div
+                  key={`${client.name}-${index}`}
+                  className="flex-shrink-0 mx-8 group"
+                >
+                  <div className="glass rounded-xl p-6 lg:p-8 h-24 lg:h-32 w-32 lg:w-40 flex items-center justify-center transition-all duration-300 hover:border-primary/30 hover:scale-110">
+                    <img
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:filter-none group-hover:brightness-100"
+                    />
+                  </div>
                 </div>
-              </div>
-              
-              {/* Animated background glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-xl opacity-0 group-hover:opacity-50 blur-xl transition-all duration-500 -z-10 scale-110"></div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Floating animation elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -50, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full blur-sm"
-          />
-          <motion.div
-            animate={{
-              x: [0, -80, 0],
-              y: [0, 60, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear",
-              delay: 5,
-            }}
-            className="absolute top-3/4 right-1/3 w-3 h-3 bg-accent/40 rounded-full blur-sm"
-          />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

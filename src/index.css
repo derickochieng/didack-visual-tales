@@ -84,6 +84,23 @@ All colors MUST be HSL.
   .container-custom {
     @apply max-w-7xl mx-auto;
   }
+  
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  
+  .pause-marquee {
+    animation-play-state: paused;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 .parallax-element {
