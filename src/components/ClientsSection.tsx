@@ -61,12 +61,15 @@ const ClientsSection = () => {
                   key={`${client.name}-${index}`}
                   className="flex-shrink-0 mx-8 group"
                 >
-                  <div className="glass rounded-xl p-6 lg:p-8 h-24 lg:h-32 w-32 lg:w-40 flex items-center justify-center transition-all duration-300 hover:border-primary/30 hover:scale-110">
+                  <div className="glass rounded-xl p-6 lg:p-8 h-32 lg:h-40 w-40 lg:w-48 flex flex-col items-center justify-center transition-all duration-300 hover:border-primary/30 hover:scale-110">
                     <img
                       src={client.logo}
                       alt={`${client.name} logo`}
-                      className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:filter-none group-hover:brightness-100"
+                      className="max-w-full max-h-20 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:filter-none group-hover:brightness-100 mb-3"
                     />
+                    <span className="text-primary font-medium text-center text-xs lg:text-sm">
+                      {client.name}
+                    </span>
                   </div>
                 </div>
               ))}
