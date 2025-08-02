@@ -171,11 +171,11 @@ const GallerySection = () => {
     },
     {
       id: 6,
-      title: 'Annual Company Gala',
+      title: 'Corporate Conference Address',
       category: 'corporate-events',
-      type: 'video',
-      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'Corporate event coverage and brand storytelling'
+      type: 'photo',
+      image: '/lovable-uploads/2454ff68-33c6-4138-92ff-af2eb65f811e.png',
+      description: 'Professional documentation of executive presentations and large audience engagement'
     },
     {
       id: 25,
