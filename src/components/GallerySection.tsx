@@ -274,12 +274,44 @@ const GallerySection = () => {
       description: 'Lush green vegetable garden showing healthy crop growth'
     },
     {
-      id: 5,
-      title: 'Luxury Property Showcase',
+      id: 77,
+      title: 'Luxury Villa with Pool',
       category: 'real-estate',
       type: 'photo',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'High-end real estate photography and virtual tours'
+      image: '/lovable-uploads/2680901a-c6f7-4398-bb2c-506967722ab0.png',
+      description: 'Stunning white villa with swimming pool and tropical landscaping'
+    },
+    {
+      id: 78,
+      title: 'Modern Luxury Bathroom',
+      category: 'real-estate',
+      type: 'photo',
+      image: '/lovable-uploads/443a8832-bbfb-44a1-9bf5-8a6888627586.png',
+      description: 'Contemporary bathroom design with premium fixtures and finishes'
+    },
+    {
+      id: 79,
+      title: 'Contemporary Home with Pool',
+      category: 'real-estate',
+      type: 'photo',
+      image: '/lovable-uploads/960f7b3d-7555-4c98-8092-cda4b50393f1.png',
+      description: 'Modern family home featuring pool and beautifully landscaped gardens'
+    },
+    {
+      id: 80,
+      title: 'Luxury Interior Design',
+      category: 'real-estate',
+      type: 'photo',
+      image: '/lovable-uploads/661a09ac-dcea-4187-abb9-b2939aad7536.png',
+      description: 'Sophisticated interior space with geometric design elements'
+    },
+    {
+      id: 81,
+      title: 'Premium Commercial Space',
+      category: 'real-estate',
+      type: 'photo',
+      image: '/lovable-uploads/0ea73351-5705-48d4-89ea-3ee7938182db.png',
+      description: 'High-end commercial interior with wood paneling and modern aesthetics'
     },
     {
       id: 6,
