@@ -224,6 +224,14 @@ const GallerySection = () => {
       type: 'photo',
       image: '/lovable-uploads/5ea854c8-3bb3-452d-9a79-03daa65d9648.png',
       description: 'Professional networking moments and executive interactions'
+    },
+    {
+      id: 31,
+      title: 'Professional Conference Attendee',
+      category: 'corporate-events',
+      type: 'photo',
+      image: '/lovable-uploads/e00066a4-d3e1-496e-810f-ed0d631192b9.png',
+      description: 'Capturing engaged participants during corporate conferences and workshops'
     }
   ];
 
