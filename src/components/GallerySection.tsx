@@ -176,6 +176,54 @@ const GallerySection = () => {
       type: 'video',
       image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       description: 'Corporate event coverage and brand storytelling'
+    },
+    {
+      id: 25,
+      title: 'Executive Appreciation Event',
+      category: 'corporate-events',
+      type: 'photo',
+      image: '/lovable-uploads/58127718-7f00-4363-86ee-c0c32e088b71.png',
+      description: 'Capturing moments of recognition and celebration at corporate galas'
+    },
+    {
+      id: 26,
+      title: 'Corporate Conference Hall',
+      category: 'corporate-events',
+      type: 'photo',
+      image: '/lovable-uploads/006d81e5-3ce0-44ca-a567-ea80cdfd3d06.png',
+      description: 'Professional documentation of large-scale corporate conferences'
+    },
+    {
+      id: 27,
+      title: 'Keynote Speaker Presentation',
+      category: 'corporate-events',
+      type: 'photo',
+      image: '/lovable-uploads/1bee549d-3e45-4516-8f7d-8a0a1c766faf.png',
+      description: 'Dynamic speaker presentations and audience engagement moments'
+    },
+    {
+      id: 28,
+      title: 'Executive Leadership Address',
+      category: 'corporate-events',
+      type: 'photo',
+      image: '/lovable-uploads/b276c57d-edb2-4a04-ab59-e1059897722f.png',
+      description: 'Professional coverage of executive speeches and corporate communications'
+    },
+    {
+      id: 29,
+      title: 'Healthcare Leadership Panel',
+      category: 'corporate-events',
+      type: 'photo',
+      image: '/lovable-uploads/c8b2f585-4cdf-4cb1-a542-88a7b141b032.png',
+      description: 'Industry panel discussions and thought leadership sessions'
+    },
+    {
+      id: 30,
+      title: 'Corporate Summit Networking',
+      category: 'corporate-events',
+      type: 'photo',
+      image: '/lovable-uploads/5ea854c8-3bb3-452d-9a79-03daa65d9648.png',
+      description: 'Professional networking moments and executive interactions'
     }
   ];
 
