@@ -66,12 +66,60 @@ const GallerySection = () => {
       description: 'Celebrating the joy and potential of young community members'
     },
     {
-      id: 2,
-      title: 'Climate Action Summit',
+      id: 69,
+      title: 'Pastoral Communities and Climate Adaptation',
       category: 'environment',
-      type: 'video',
-      image: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'Visual storytelling for environmental conservation initiatives'
+      type: 'photo',
+      image: '/lovable-uploads/66f1aa76-0d6a-4211-b470-04ddd4f595d2.png',
+      description: 'Documenting how pastoral communities adapt to changing climate conditions'
+    },
+    {
+      id: 70,
+      title: 'Water Access and Climate Resilience',
+      category: 'environment',
+      type: 'photo',
+      image: '/lovable-uploads/5720470a-5ed3-44be-926c-ed4e960eac71.png',
+      description: 'Community efforts to secure water access in climate-vulnerable areas'
+    },
+    {
+      id: 71,
+      title: 'Wetland Communities and Environmental Change',
+      category: 'environment',
+      type: 'photo',
+      image: '/lovable-uploads/1fd589a9-d0ae-4559-88ac-8a5f8953f3c3.png',
+      description: 'Documenting traditional practices in changing wetland ecosystems'
+    },
+    {
+      id: 72,
+      title: 'Community Resilience and Adaptation',
+      category: 'environment',
+      type: 'photo',
+      image: '/lovable-uploads/357f3252-d4a8-4c10-a9e0-71384e9ebd27.png',
+      description: 'Communities working together to adapt to environmental challenges'
+    },
+    {
+      id: 73,
+      title: 'Climate Impact on Fishing Communities',
+      category: 'environment',
+      type: 'photo',
+      image: '/lovable-uploads/87df15bd-0320-4359-9597-8a3f2d66e2fb.png',
+      description: 'Documenting climate impacts on traditional fishing and water transport'
+    },
+    {
+      id: 74,
+      title: 'Flood Response and Community Solidarity',
+      category: 'environment',
+      type: 'photo',
+      image: '/lovable-uploads/e591c308-e62c-408e-a837-93d8e47c9625.png',
+      description: 'Communities responding to flooding and climate-related disasters'
+    },
+    {
+      id: 75,
+      title: 'Climate Vulnerability in Urban Settlements',
+      category: 'environment',
+      type: 'photo',
+      image: '/lovable-uploads/4abbd12e-f02f-49a5-8569-42fbc59dddc4.png',
+      description: 'Documenting climate vulnerability in informal urban settlements'
     },
     {
       id: 32,
