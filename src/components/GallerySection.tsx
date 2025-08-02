@@ -74,14 +74,6 @@ const GallerySection = () => {
       description: 'Visual storytelling for environmental conservation initiatives'
     },
     {
-      id: 3,
-      title: 'Corporate Leadership Conference',
-      category: 'conferences',
-      type: 'photo',
-      image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'Professional conference documentation and keynote coverage'
-    },
-    {
       id: 32,
       title: 'Executive Conference Presentation',
       category: 'conferences',
