@@ -19,11 +19,51 @@ const GallerySection = () => {
   const galleryItems = [
     {
       id: 1,
-      title: 'SHOFCO Youth Talent Show',
+      title: 'Community Photography Workshop',
       category: 'humanitarian',
       type: 'photo',
-      image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'Documenting community empowerment through creative expression in Kibera'
+      image: '/lovable-uploads/7bc4e4f1-44ea-41d7-afd6-e1072a93dae7.png',
+      description: 'Capturing moments of connection and learning in rural communities'
+    },
+    {
+      id: 11,
+      title: 'Clean Water Initiative',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/4b16b84a-def0-48e2-b308-6e01cf52d1c1.png',
+      description: 'Documenting access to clean water and its impact on children\'s lives'
+    },
+    {
+      id: 12,
+      title: 'Sunset Silhouettes',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/fef03ae6-6d91-4e6b-8bc1-f1c972359935.png',
+      description: 'Capturing the resilience and hope of communities at day\'s end'
+    },
+    {
+      id: 13,
+      title: 'Local Market Stories',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/1f554a95-b452-4568-be8c-4f03acfc7694.png',
+      description: 'Documenting the entrepreneurial spirit in local fish markets'
+    },
+    {
+      id: 14,
+      title: 'Cultural Heritage',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/dad23e9c-014b-4068-b611-4f605503bbd4.png',
+      description: 'Preserving the stories and traditions of community elders'
+    },
+    {
+      id: 15,
+      title: 'Youth Empowerment',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/61790633-c2ab-4891-8b32-b94d0afb9faf.png',
+      description: 'Celebrating the joy and potential of young community members'
     },
     {
       id: 2,
