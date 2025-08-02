@@ -82,6 +82,70 @@ const GallerySection = () => {
       description: 'Professional conference documentation and keynote coverage'
     },
     {
+      id: 32,
+      title: 'Executive Conference Presentation',
+      category: 'conferences',
+      type: 'photo',
+      image: '/lovable-uploads/2454ff68-33c6-4138-92ff-af2eb65f811e.png',
+      description: 'Professional documentation of executive presentations and large audience engagement'
+    },
+    {
+      id: 33,
+      title: 'Conference Recognition Event',
+      category: 'conferences',
+      type: 'photo',
+      image: '/lovable-uploads/58127718-7f00-4363-86ee-c0c32e088b71.png',
+      description: 'Capturing moments of recognition and celebration at conferences'
+    },
+    {
+      id: 34,
+      title: 'Large Conference Hall Coverage',
+      category: 'conferences',
+      type: 'photo',
+      image: '/lovable-uploads/006d81e5-3ce0-44ca-a567-ea80cdfd3d06.png',
+      description: 'Professional documentation of large-scale conference venues'
+    },
+    {
+      id: 35,
+      title: 'Conference Keynote Speaker',
+      category: 'conferences',
+      type: 'photo',
+      image: '/lovable-uploads/1bee549d-3e45-4516-8f7d-8a0a1c766faf.png',
+      description: 'Dynamic keynote presentations and speaker engagement moments'
+    },
+    {
+      id: 36,
+      title: 'Conference Leadership Address',
+      category: 'conferences',
+      type: 'photo',
+      image: '/lovable-uploads/b276c57d-edb2-4a04-ab59-e1059897722f.png',
+      description: 'Professional coverage of leadership speeches at conferences'
+    },
+    {
+      id: 37,
+      title: 'Industry Conference Panel',
+      category: 'conferences',
+      type: 'photo',
+      image: '/lovable-uploads/c8b2f585-4cdf-4cb1-a542-88a7b141b032.png',
+      description: 'Industry panel discussions and expert sessions'
+    },
+    {
+      id: 38,
+      title: 'Conference Networking Moments',
+      category: 'conferences',
+      type: 'photo',
+      image: '/lovable-uploads/5ea854c8-3bb3-452d-9a79-03daa65d9648.png',
+      description: 'Professional networking and attendee interactions'
+    },
+    {
+      id: 39,
+      title: 'Engaged Conference Participant',
+      category: 'conferences',
+      type: 'photo',
+      image: '/lovable-uploads/e00066a4-d3e1-496e-810f-ed0d631192b9.png',
+      description: 'Capturing engaged participants during conference sessions'
+    },
+    {
       id: 4,
       title: 'Corn Harvest Joy',
       category: 'farming',
