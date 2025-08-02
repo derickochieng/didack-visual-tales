@@ -83,11 +83,11 @@ const GallerySection = () => {
     },
     {
       id: 4,
-      title: 'Sustainable Farming Initiative',
+      title: 'Corn Harvest Joy',
       category: 'farming',
       type: 'photo',
-      image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'Documenting innovative agricultural practices and rural development'
+      image: '/lovable-uploads/825742bf-d959-40e4-9b19-1ddab19409d1.png',
+      description: 'Capturing the happiness and pride of successful corn harvesting'
     },
     {
       id: 16,
