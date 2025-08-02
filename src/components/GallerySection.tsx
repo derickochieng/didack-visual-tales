@@ -90,6 +90,54 @@ const GallerySection = () => {
       description: 'Documenting innovative agricultural practices and rural development'
     },
     {
+      id: 16,
+      title: 'Women in Agriculture',
+      category: 'farming',
+      type: 'photo',
+      image: '/lovable-uploads/175ba722-4fa8-4175-a777-ebc8accdbc87.png',
+      description: 'Celebrating women farmers and their vital role in food security'
+    },
+    {
+      id: 17,
+      title: 'Harvest Pride',
+      category: 'farming',
+      type: 'photo',
+      image: '/lovable-uploads/150bcf87-976e-4ee1-93a2-f9736c05a5af.png',
+      description: 'Capturing the joy and pride of successful vegetable harvests'
+    },
+    {
+      id: 18,
+      title: 'Collaborative Farming',
+      category: 'farming',
+      type: 'photo',
+      image: '/lovable-uploads/69501bc8-70be-43a4-a9d0-b2dab7743ebe.png',
+      description: 'Documenting teamwork and cooperation in sustainable agriculture'
+    },
+    {
+      id: 19,
+      title: 'Fruit Cultivation',
+      category: 'farming',
+      type: 'photo',
+      image: '/lovable-uploads/90fcd3d2-2dfd-4b44-b0e7-e9d35c2a2b8e.png',
+      description: 'Expert papaya cultivation and sustainable fruit farming practices'
+    },
+    {
+      id: 20,
+      title: 'Banana Plantation Success',
+      category: 'farming',
+      type: 'photo',
+      image: '/lovable-uploads/052a0b55-9526-4ac9-9c07-bb3c1d67cce4.png',
+      description: 'Showcasing thriving banana cultivation and farmer dedication'
+    },
+    {
+      id: 21,
+      title: 'Greenhouse Innovation',
+      category: 'farming',
+      type: 'photo',
+      image: '/lovable-uploads/377aadcd-e720-4ff2-a317-1a16633d85f4.png',
+      description: 'Modern greenhouse farming techniques and sustainable practices'
+    },
+    {
       id: 5,
       title: 'Luxury Property Showcase',
       category: 'real-estate',
