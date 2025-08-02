@@ -138,6 +138,30 @@ const GallerySection = () => {
       description: 'Modern greenhouse farming techniques and sustainable practices'
     },
     {
+      id: 22,
+      title: 'Fresh Leafy Greens',
+      category: 'farming',
+      type: 'photo',
+      image: '/lovable-uploads/d8d3e21b-6e33-4be5-af46-d825a2707879.png',
+      description: 'Farmer proudly displaying fresh leafy greens from the field'
+    },
+    {
+      id: 23,
+      title: 'Traditional Farming Methods',
+      category: 'farming',
+      type: 'photo',
+      image: '/lovable-uploads/de3b998c-beec-4215-bcc4-3b0a01bfb6d1.png',
+      description: 'Woman farmer tending to crops using traditional agricultural practices'
+    },
+    {
+      id: 24,
+      title: 'Green Vegetable Garden',
+      category: 'farming',
+      type: 'photo',
+      image: '/lovable-uploads/4c6cfdc2-5e59-42d5-a1d5-e88813635782.png',
+      description: 'Lush green vegetable garden showing healthy crop growth'
+    },
+    {
       id: 5,
       title: 'Luxury Property Showcase',
       category: 'real-estate',
