@@ -56,10 +56,11 @@ const Navigation = () => {
             onClick={() => scrollToSection('home')}
             className="flex items-center space-x-2"
           >
-            <Camera className="h-8 w-8 text-white" />
-            <span className="text-xl lg:text-2xl font-playfair font-bold text-white">
-              Didack Media
-            </span>
+            <img 
+              src="/lovable-uploads/0d501a08-6a08-470b-bbd3-61c59f2ac137.png" 
+              alt="Didack Media Logo" 
+              className="h-8 w-auto"
+            />
           </button>
 
           {/* Desktop Navigation */}
