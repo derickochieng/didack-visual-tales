@@ -122,6 +122,14 @@ const GallerySection = () => {
       description: 'Documenting climate vulnerability in informal urban settlements'
     },
     {
+      id: 76,
+      title: 'Pastoral Water Access in Arid Regions',
+      category: 'environment',
+      type: 'photo',
+      image: '/lovable-uploads/a361c702-60cf-479c-9438-bf4a34a7e958.png',
+      description: 'Pastoral communities accessing water resources in drought-affected areas'
+    },
+    {
       id: 32,
       title: 'Executive Conference Presentation',
       category: 'conferences',
