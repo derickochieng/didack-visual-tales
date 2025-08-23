@@ -1,24 +1,25 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Camera, Film, Image } from 'lucide-react';
 import HeroCarousel from './HeroCarousel';
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80')`
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
-
-      {/* Animated Photo Carousel */}
+      {/* Background Carousel */}
       <HeroCarousel />
+
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 opacity-20 animate-float">
+        <Camera className="h-12 w-12 text-white" />
+      </div>
+      <div className="absolute bottom-20 right-10 opacity-20 animate-float" style={{ animationDelay: '1s' }}>
+        <Film className="h-16 w-16 text-white" />
+      </div>
+      <div className="absolute top-1/3 right-20 opacity-20 animate-float" style={{ animationDelay: '2s' }}>
+        <Image className="h-10 w-10 text-white" />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">

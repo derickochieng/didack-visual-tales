@@ -25,6 +25,10 @@ const HeroCarousel = () => {
     {
       src: '/lovable-uploads/4a5797b3-1b13-4d0d-8075-f4cae633902f.png',
       alt: 'Photographer with traditional community - cultural documentation'
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
+      alt: 'Photographer with camera - original background'
     }
   ];
 
@@ -33,88 +37,27 @@ const HeroCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Left side carousel */}
-      <div className="absolute top-1/4 left-8 lg:left-16 w-32 lg:w-48 h-40 lg:h-60 opacity-20 hover:opacity-30 transition-opacity duration-500">
-        <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out transform ${
-                index === currentIndex 
-                  ? 'opacity-100 scale-100' 
-                  : index === (currentIndex - 1 + images.length) % images.length
-                  ? 'opacity-0 scale-110'
-                  : 'opacity-0 scale-95'
-              }`}
-            />
-          ))}
+    <div className="absolute inset-0">
+      {/* Background Image Carousel */}
+      {images.map((image, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-2000 ease-in-out ${
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: `url('${image.src}')`
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
-      </div>
-
-      {/* Right side carousel (offset timing) */}
-      <div className="absolute top-1/3 right-8 lg:right-16 w-28 lg:w-40 h-36 lg:h-52 opacity-15 hover:opacity-25 transition-opacity duration-500">
-        <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out transform ${
-                index === (currentIndex + 2) % images.length 
-                  ? 'opacity-100 scale-100' 
-                  : index === (currentIndex + 1) % images.length
-                  ? 'opacity-0 scale-110'
-                  : 'opacity-0 scale-95'
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Bottom center carousel */}
-      <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 w-24 lg:w-36 h-32 lg:h-44 opacity-10 hover:opacity-20 transition-opacity duration-500">
-        <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out transform ${
-                index === (currentIndex + 4) % images.length 
-                  ? 'opacity-100 scale-100' 
-                  : index === (currentIndex + 3) % images.length
-                  ? 'opacity-0 scale-110'
-                  : 'opacity-0 scale-95'
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Floating particles effect */}
-      <div className="absolute inset-0">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-white/10 rounded-full animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.8}s`,
-              animationDuration: `${4 + Math.random() * 2}s`
-            }}
-          />
-        ))}
-      </div>
+      ))}
     </div>
   );
 };
