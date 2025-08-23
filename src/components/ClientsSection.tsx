@@ -32,20 +32,23 @@ const ClientsSection = () => {
     },
   ];
 
+  // Triple the clients array for seamless infinite scroll
+  const extendedClients = [...clients, ...clients, ...clients];
+
   return (
     <section id="clients" className="section-padding bg-gradient-to-b from-background via-secondary/10 to-background relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 50% 50%, hsl(var(--primary)) 1px, transparent 1px)',
-          backgroundSize: '30px 30px'
+          backgroundSize: '40px 40px'
         }}></div>
       </div>
 
       <div className="container-custom relative z-10">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-pulse">
-            <span className="text-primary font-medium text-sm">Trusted Partners</span>
+          <div className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-pulse">
+            <span className="text-primary font-semibold text-sm tracking-wide">TRUSTED PARTNERS</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-6 animate-fade-in">
             Our Valued Clients
@@ -55,56 +58,68 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        {/* Client Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6 lg:gap-8 mb-16">
-          {clients.map((client, index) => (
-            <div
-              key={client.name}
-              className="group relative animate-fade-in"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              {/* Glow effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-              
-              {/* Main card */}
-              <div className="relative bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 lg:p-8 h-32 lg:h-36 flex flex-col items-center justify-center transition-all duration-500 hover:border-primary/30 hover:bg-card/90 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10">
-                {/* Logo */}
-                <div className="relative mb-3 overflow-hidden rounded-lg">
-                  <img
-                    src={client.logo}
-                    alt={`${client.name} logo`}
-                    className="max-w-full max-h-16 lg:max-h-20 object-contain transition-all duration-500 filter brightness-90 contrast-110 group-hover:brightness-110 group-hover:scale-110"
-                  />
-                  
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        {/* 3D Marquee Container */}
+        <div className="relative perspective-1000 h-32 lg:h-40 mb-16">
+          {/* Top Marquee - Moving Right */}
+          <div className="absolute top-0 left-0 right-0 h-20 lg:h-24 overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
+            
+            <div className="flex animate-marquee-right hover:pause-marquee whitespace-nowrap">
+              {extendedClients.map((client, index) => (
+                <div
+                  key={`top-${client.name}-${index}`}
+                  className="flex-shrink-0 mx-4 lg:mx-6 group transform-gpu"
+                >
+                  <div className="bg-card/90 backdrop-blur-sm border border-border/50 rounded-2xl p-4 lg:p-6 h-16 lg:h-20 w-32 lg:w-40 flex items-center justify-center transition-all duration-500 hover:border-primary/50 hover:bg-card hover:scale-110 hover:shadow-xl hover:shadow-primary/20 hover:rotate-y-12">
+                    <img
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      className="max-w-full max-h-12 lg:max-h-14 object-contain transition-all duration-500 filter brightness-110 contrast-110 group-hover:brightness-125 group-hover:scale-110"
+                    />
+                  </div>
                 </div>
-                
-                {/* Client name */}
-                <span className="text-foreground/80 group-hover:text-primary font-medium text-center text-xs lg:text-sm leading-tight transition-colors duration-300">
-                  {client.name}
-                </span>
-
-                {/* Floating dots */}
-                <div className="absolute top-2 right-2 w-2 h-2 bg-primary/30 rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Bottom Marquee - Moving Left */}
+          <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-24 overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
+            
+            <div className="flex animate-marquee-left hover:pause-marquee whitespace-nowrap">
+              {[...extendedClients].reverse().map((client, index) => (
+                <div
+                  key={`bottom-${client.name}-${index}`}
+                  className="flex-shrink-0 mx-4 lg:mx-6 group transform-gpu"
+                >
+                  <div className="bg-card/80 backdrop-blur-sm border border-border/30 rounded-2xl p-4 lg:p-6 h-16 lg:h-20 w-32 lg:w-40 flex items-center justify-center transition-all duration-500 hover:border-primary/50 hover:bg-card hover:scale-110 hover:shadow-xl hover:shadow-primary/20 hover:-rotate-y-12">
+                    <img
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      className="max-w-full max-h-12 lg:max-h-14 object-contain transition-all duration-500 filter brightness-100 contrast-110 group-hover:brightness-125 group-hover:scale-110"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Bottom Statistics */}
+        {/* Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="animate-fade-in" style={{ animationDelay: '800ms' }}>
-            <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">50+</div>
-            <div className="text-muted-foreground">Projects Completed</div>
+          <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
+            <div className="text-5xl lg:text-6xl font-bold text-gradient mb-3">50+</div>
+            <div className="text-muted-foreground text-lg">Projects Completed</div>
           </div>
-          <div className="animate-fade-in" style={{ animationDelay: '900ms' }}>
-            <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">7</div>
-            <div className="text-muted-foreground">Trusted Partners</div>
+          <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
+            <div className="text-5xl lg:text-6xl font-bold text-gradient mb-3">7+</div>
+            <div className="text-muted-foreground text-lg">Trusted Partners</div>
           </div>
-          <div className="animate-fade-in" style={{ animationDelay: '1000ms' }}>
-            <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">100%</div>
-            <div className="text-muted-foreground">Client Satisfaction</div>
+          <div className="animate-fade-in" style={{ animationDelay: '600ms' }}>
+            <div className="text-5xl lg:text-6xl font-bold text-gradient mb-3">100%</div>
+            <div className="text-muted-foreground text-lg">Client Satisfaction</div>
           </div>
         </div>
       </div>

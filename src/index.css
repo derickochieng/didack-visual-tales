@@ -93,8 +93,33 @@ All colors MUST be HSL.
     animation-play-state: paused;
   }
   
+  .animate-marquee-right {
+    animation: marquee-right 40s linear infinite;
+  }
+  
+  .animate-marquee-left {
+    animation: marquee-left 35s linear infinite;
+  }
+  
   .animate-float {
     animation: float 6s ease-in-out infinite;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+  
+  .-rotate-y-12 {
+    transform: rotateY(-12deg);
+  }
+  
+  .transform-gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
   
   @keyframes marquee {
@@ -103,6 +128,24 @@ All colors MUST be HSL.
     }
     100% {
       transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes marquee-right {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
     }
   }
   
