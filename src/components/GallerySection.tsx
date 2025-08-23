@@ -102,8 +102,8 @@ const GallerySection = () => {
       title: 'Climate Impact on Fishing Communities',
       category: 'environment',
       type: 'photo',
-      image: '/lovable-uploads/87df15bd-0320-4359-9597-8a3f2d66e2fb.png',
-      description: 'Documenting climate impacts on traditional fishing and water transport'
+      image: '/lovable-uploads/3403f9d9-92b4-471f-a602-ca75958fab7c.png',
+      description: 'Fisherman displaying fresh catch from coastal waters'
     },
     {
       id: 74,
