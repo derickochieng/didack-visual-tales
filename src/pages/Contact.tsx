@@ -36,7 +36,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: '+254 700 000 000'
+      details: '+254716760709'
     },
     {
       icon: Mail,
@@ -140,7 +140,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
-                      placeholder="+254 700 000 000"
+                      placeholder="+254716760709"
                     />
                   </div>
                   

@@ -57,7 +57,7 @@ const Navigation = () => {
             className="flex items-center space-x-2"
           >
             <img 
-              src="/lovable-uploads/0d501a08-6a08-470b-bbd3-61c59f2ac137.png" 
+              src="/lovable-uploads/0d501a08-6a08-470b-bbd3-61c59f2ac137.webp" 
               alt="Didack Media Logo" 
               className="h-8 w-auto"
             />

@@ -7,19 +7,19 @@ const TeamSection = () => {
     {
       name: "Allan Didack",
       role: "Founder & Documentary Photographer",
-      image: "/lovable-uploads/84e3fb66-db5d-4c61-9770-e0098267b348.png",
+      image: "/lovable-uploads/84e3fb66-db5d-4c61-9770-e0098267b348.webp",
       bio: "I'm Allan Didack, a documentary and corporate photographer based in Nairobi, Kenya, and the founder of Didack Media. With over 10 years of experience in documentary photography, I bring a seasoned eye and deep passion for visual storytelling that informs, inspires, and drives meaningful change. At Didack Media, I lead with purpose—documenting the resilience of communities, championing environmental causes, and helping organizations visually communicate their impact. Every project I undertake is guided by a commitment to authenticity, creativity, and a deep respect for the stories I tell."
     },
     {
       name: "Cole Charles",
       role: "Cinematographer",
-      image: "/lovable-uploads/d0dc3dcf-43bc-447d-a795-e8796b7c4e80.png",
+      image: "/lovable-uploads/d0dc3dcf-43bc-447d-a795-e8796b7c4e80.webp",
       bio: "Cole Charles is a seasoned cinematographer with a passion for visual storytelling that drives social impact. With over 5 years of experience in the film and media industry, he specializes in helping brands craft authentic narratives that highlight humanitarian efforts and socially conscious initiatives. Through a cinematic lens, cole Charles brings to life stories that resonate deeply with audiences—whether it's showcasing grassroots community projects, environmental sustainability campaigns, or corporate social responsibility programs. Blending technical expertise with a keen eye for emotion and nuance, he has partnered with NGOs, global brands, and nonprofits to produce compelling visual content that informs, inspires, and ignites change."
     },
     {
       name: "Sharon Nyoike",
       role: "Content Strategist & Digital Media Consultant",
-      image: "/lovable-uploads/7fd227ad-2a6f-4756-9851-7d058c7efcb8.png",
+      image: "/lovable-uploads/7fd227ad-2a6f-4756-9851-7d058c7efcb8.webp",
       bio: "Sharon Nyoike is a content strategist and digital media consultant specializing in purpose-driven storytelling. With a background in journalism and experience in media, voice-over, and digital influence, she helps brands and creators build impactful visibility through strategic content and authentic personal branding."
     }
   ];

@@ -22,7 +22,7 @@ const GallerySection = () => {
       title: 'Community Photography Workshop',
       category: 'humanitarian',
       type: 'photo',
-      image: '/lovable-uploads/7bc4e4f1-44ea-41d7-afd6-e1072a93dae7.png',
+      image: '/lovable-uploads/7bc4e4f1-44ea-41d7-afd6-e1072a93dae7.webp',
       description: 'Capturing moments of connection and learning in rural communities'
     },
     {
@@ -30,7 +30,7 @@ const GallerySection = () => {
       title: 'Clean Water Initiative',
       category: 'humanitarian',
       type: 'photo',
-      image: '/lovable-uploads/4b16b84a-def0-48e2-b308-6e01cf52d1c1.png',
+      image: '/lovable-uploads/4b16b84a-def0-48e2-b308-6e01cf52d1c1.webp',
       description: 'Documenting access to clean water and its impact on children\'s lives'
     },
     {
@@ -38,7 +38,7 @@ const GallerySection = () => {
       title: 'Sunset Silhouettes',
       category: 'humanitarian',
       type: 'photo',
-      image: '/lovable-uploads/fef03ae6-6d91-4e6b-8bc1-f1c972359935.png',
+      image: '/lovable-uploads/fef03ae6-6d91-4e6b-8bc1-f1c972359935.webp',
       description: 'Capturing the resilience and hope of communities at day\'s end'
     },
     {
@@ -46,7 +46,7 @@ const GallerySection = () => {
       title: 'Local Market Stories',
       category: 'humanitarian',
       type: 'photo',
-      image: '/lovable-uploads/1f554a95-b452-4568-be8c-4f03acfc7694.png',
+      image: '/lovable-uploads/1f554a95-b452-4568-be8c-4f03acfc7694.webp',
       description: 'Documenting the entrepreneurial spirit in local fish markets'
     },
     {
@@ -54,7 +54,7 @@ const GallerySection = () => {
       title: 'Cultural Heritage',
       category: 'humanitarian',
       type: 'photo',
-      image: '/lovable-uploads/dad23e9c-014b-4068-b611-4f605503bbd4.png',
+      image: '/lovable-uploads/dad23e9c-014b-4068-b611-4f605503bbd4.webp',
       description: 'Preserving the stories and traditions of community elders'
     },
     {
@@ -62,7 +62,7 @@ const GallerySection = () => {
       title: 'Youth Empowerment',
       category: 'humanitarian',
       type: 'photo',
-      image: '/lovable-uploads/61790633-c2ab-4891-8b32-b94d0afb9faf.png',
+      image: '/lovable-uploads/61790633-c2ab-4891-8b32-b94d0afb9faf.webp',
       description: 'Celebrating the joy and potential of young community members'
     },
     {
