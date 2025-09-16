@@ -4,31 +4,31 @@ const ClientsSection = () => {
   const clients = [
     {
       name: "Convoy of Hope",
-      logo: "/lovable-uploads/a2be3d53-ed0e-499f-af57-3601469a04c5.png",
+      logo: "/lovable-uploads/a2be3d53-ed0e-499f-af57-3601469a04c5.webp",
     },
     {
       name: "SHOFCO",
-      logo: "/lovable-uploads/ae99bc7a-4db4-4080-b21e-9fd13d0287bb.png",
+      logo: "/lovable-uploads/ae99bc7a-4db4-4080-b21e-9fd13d0287bb.webp",
     },
     {
       name: "Wangari Maathai Foundation",
-      logo: "/lovable-uploads/5eb469d0-908d-422e-a8b4-0debea8aa532.png",
+      logo: "/lovable-uploads/5eb469d0-908d-422e-a8b4-0debea8aa532.webp",
     },
     {
       name: "Medic East Africa",
-      logo: "/lovable-uploads/b623f9c9-a726-44fc-92b2-f11da3477bc2.png",
+      logo: "/lovable-uploads/b623f9c9-a726-44fc-92b2-f11da3477bc2.webp",
     },
     {
       name: "Teach For All",
-      logo: "/lovable-uploads/55bd63fd-83a1-494a-aff8-b975427859bc.png",
+      logo: "/lovable-uploads/55bd63fd-83a1-494a-aff8-b975427859bc.webp",
     },
     {
       name: "ISFAA",
-      logo: "/lovable-uploads/3ef96afa-f794-4821-a8bb-242257ff26f5.png",
+      logo: "/lovable-uploads/3ef96afa-f794-4821-a8bb-242257ff26f5.webp",
     },
     {
       name: "International Funders for Indigenous Peoples",
-      logo: "/lovable-uploads/f2ab6830-1937-4845-8685-71506674a1ad.png",
+      logo: "/lovable-uploads/f2ab6830-1937-4845-8685-71506674a1ad.webp",
     },
   ];
 
