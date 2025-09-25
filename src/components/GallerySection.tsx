@@ -19,7 +19,7 @@ const GallerySection = () => {
   const galleryItems = [
     {
       id: 1,
-      title: 'Community Photography Workshop',
+      title: 'Community Engagement',
       category: 'humanitarian',
       type: 'photo',
       image: '/lovable-uploads/7bc4e4f1-44ea-41d7-afd6-e1072a93dae7.webp',
@@ -27,7 +27,7 @@ const GallerySection = () => {
     },
     {
       id: 11,
-      title: 'Clean Water Initiative',
+      title: 'Hunger and Starvation',
       category: 'humanitarian',
       type: 'photo',
       image: '/lovable-uploads/4b16b84a-def0-48e2-b308-6e01cf52d1c1.webp',
