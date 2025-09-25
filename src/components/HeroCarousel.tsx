@@ -27,6 +27,18 @@ const HeroCarousel = () => {
       alt: 'Photographer with traditional community - cultural documentation'
     },
     {
+      src: '/lovable-uploads/education-student-studying.webp',
+      alt: 'Student studying with lamp and alphabet chart - education documentation'
+    },
+    {
+      src: '/lovable-uploads/education-child-writing.webp',
+      alt: 'Child writing at desk with lamp - educational focus'
+    },
+    {
+      src: '/lovable-uploads/healthcare-child-examination.webp',
+      alt: 'Child health examination - healthcare documentation'
+    },
+    {
       src: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
       alt: 'Photographer with camera - original background'
     }
