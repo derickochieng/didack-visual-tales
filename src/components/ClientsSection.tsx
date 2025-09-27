@@ -58,25 +58,30 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        {/* 3D Marquee Container */}
-        <div className="relative perspective-1000 h-32 lg:h-40 mb-16">
+        {/* Enhanced 3D Marquee Container */}
+        <div className="relative perspective-1000 h-36 lg:h-44 mb-16">
+          {/* Ambient glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/10 to-primary/5 rounded-3xl blur-2xl"></div>
+          
           {/* Top Marquee - Moving Right */}
-          <div className="absolute top-0 left-0 right-0 h-20 lg:h-24 overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
+          <div className="absolute top-0 left-0 right-0 h-22 lg:h-26 overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-background via-background/80 to-transparent z-10"></div>
             
             <div className="flex animate-marquee-right hover:pause-marquee whitespace-nowrap">
               {extendedClients.map((client, index) => (
                 <div
                   key={`top-${client.name}-${index}`}
-                  className="flex-shrink-0 mx-4 lg:mx-6 group transform-gpu"
+                  className="flex-shrink-0 mx-5 lg:mx-7 group transform-gpu"
                 >
-                  <div className="bg-card/90 backdrop-blur-sm border border-border/50 rounded-2xl p-4 lg:p-6 h-16 lg:h-20 w-32 lg:w-40 flex items-center justify-center transition-all duration-500 hover:border-primary/50 hover:bg-card hover:scale-110 hover:shadow-xl hover:shadow-primary/20 hover:rotate-y-12">
+                  <div className="relative bg-gradient-to-br from-card/95 via-card/90 to-card/85 backdrop-blur-md border border-gradient-to-r from-border/60 via-primary/20 to-border/60 rounded-3xl p-5 lg:p-7 h-18 lg:h-22 w-36 lg:w-44 flex items-center justify-center transition-all duration-700 hover:border-primary/60 hover:bg-gradient-to-br hover:from-card hover:via-primary/5 hover:to-card hover:scale-[1.15] hover:shadow-2xl hover:shadow-primary/30 hover:rotate-y-15 before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-primary/10 before:via-transparent before:to-secondary/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-700">
                     <img
                       src={client.logo}
                       alt={`${client.name} logo`}
-                      className="max-w-full max-h-12 lg:max-h-14 object-contain transition-all duration-500 filter brightness-110 contrast-110 group-hover:brightness-125 group-hover:scale-110"
+                      className="max-w-full max-h-10 lg:max-h-12 object-contain transition-all duration-700 filter brightness-105 contrast-110 saturate-110 group-hover:brightness-130 group-hover:scale-115 group-hover:saturate-125 relative z-10"
                     />
+                    {/* Shine effect */}
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                   </div>
                 </div>
               ))}
@@ -84,22 +89,24 @@ const ClientsSection = () => {
           </div>
 
           {/* Bottom Marquee - Moving Left */}
-          <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-24 overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-22 lg:h-26 overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-background via-background/80 to-transparent z-10"></div>
             
             <div className="flex animate-marquee-left hover:pause-marquee whitespace-nowrap">
               {[...extendedClients].reverse().map((client, index) => (
                 <div
                   key={`bottom-${client.name}-${index}`}
-                  className="flex-shrink-0 mx-4 lg:mx-6 group transform-gpu"
+                  className="flex-shrink-0 mx-5 lg:mx-7 group transform-gpu"
                 >
-                  <div className="bg-card/80 backdrop-blur-sm border border-border/30 rounded-2xl p-4 lg:p-6 h-16 lg:h-20 w-32 lg:w-40 flex items-center justify-center transition-all duration-500 hover:border-primary/50 hover:bg-card hover:scale-110 hover:shadow-xl hover:shadow-primary/20 hover:-rotate-y-12">
+                  <div className="relative bg-gradient-to-tl from-card/90 via-card/85 to-card/80 backdrop-blur-md border border-gradient-to-l from-border/50 via-secondary/20 to-border/50 rounded-3xl p-5 lg:p-7 h-18 lg:h-22 w-36 lg:w-44 flex items-center justify-center transition-all duration-700 hover:border-secondary/60 hover:bg-gradient-to-tl hover:from-card hover:via-secondary/5 hover:to-card hover:scale-[1.15] hover:shadow-2xl hover:shadow-secondary/30 hover:-rotate-y-15 before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-tl before:from-secondary/10 before:via-transparent before:to-primary/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-700">
                     <img
                       src={client.logo}
                       alt={`${client.name} logo`}
-                      className="max-w-full max-h-12 lg:max-h-14 object-contain transition-all duration-500 filter brightness-100 contrast-110 group-hover:brightness-125 group-hover:scale-110"
+                      className="max-w-full max-h-10 lg:max-h-12 object-contain transition-all duration-700 filter brightness-100 contrast-110 saturate-105 group-hover:brightness-130 group-hover:scale-115 group-hover:saturate-125 relative z-10"
                     />
+                    {/* Reverse shine effect */}
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-l from-transparent via-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform translate-x-[100%] group-hover:translate-x-[-100%] transition-transform duration-1000"></div>
                   </div>
                 </div>
               ))}

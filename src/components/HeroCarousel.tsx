@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import heroPhotographerMain from '@/assets/hero-photographer-main.webp';
+import heroCommunityEngagement from '@/assets/hero-community-engagement.webp';
+import heroEducationFocus from '@/assets/hero-education-focus.webp';
 
 const HeroCarousel = () => {
   const images = [
     {
-      src: '/lovable-uploads/e6572f21-26fa-4d29-8d42-52e2d86ef142.webp',
-      alt: 'Community portraits - three women in colorful hijabs'
+      src: heroPhotographerMain,
+      alt: 'Professional community photographer documenting social impact work'
     },
     {
-      src: '/lovable-uploads/05e08b26-912b-4383-a546-53655e50aaa2.webp',
-      alt: 'Group of women in blue hijabs - community gathering'
+      src: heroCommunityEngagement,
+      alt: 'Community engagement and social documentation'
+    },
+    {
+      src: heroEducationFocus,
+      alt: 'Educational documentation photography'
+    },
+    {
+      src: '/lovable-uploads/e6572f21-26fa-4d29-8d42-52e2d86ef142.webp',
+      alt: 'Community portraits - three women in colorful hijabs'
     },
     {
       src: '/lovable-uploads/afdf04b6-6fc3-4acb-b82b-2d6204760806.webp',
@@ -39,8 +50,8 @@ const HeroCarousel = () => {
       alt: 'Child health examination - healthcare documentation'
     },
     {
-      src: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
-      alt: 'Photographer with camera - original background'
+      src: '/lovable-uploads/photographer-camera-hero.webp',
+      alt: 'Photographer with camera - professional documentation'
     }
   ];
 
