@@ -241,12 +241,7 @@ const Gallery = () => {
                     alt={image.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="text-center p-4">
-                      <h4 className="text-white font-semibold text-lg mb-2">{image.title}</h4>
-                      <span className="text-gray-300 text-sm">{image.category}</span>
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
             ))}

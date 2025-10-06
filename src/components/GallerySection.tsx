@@ -428,35 +428,7 @@ const GallerySection = () => {
                 />
                 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center">
-                    {item.type === 'video' ? (
-                      <Play className="h-12 w-12 text-white mb-4 mx-auto" />
-                    ) : (
-                      <Camera className="h-12 w-12 text-white mb-4 mx-auto" />
-                    )}
-                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black">
-                      View {item.type === 'video' ? 'Video' : 'Gallery'}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Type Badge */}
-                <div className="absolute top-4 right-4">
-                  <span className="bg-black/80 text-white px-2 py-1 rounded-full text-xs font-medium">
-                    {item.type.toUpperCase()}
-                  </span>
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-playfair font-bold text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-300 text-sm">
-                  {item.description}
-                </p>
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
           ))}
