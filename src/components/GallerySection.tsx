@@ -106,6 +106,22 @@ const GallerySection = () => {
       description: 'Honoring the cultural heritage and wisdom of community elders'
     },
     {
+      id: 21,
+      title: 'Cultural Heritage Portrait',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/cultural-elder-portrait-2.webp',
+      description: 'Celebrating traditional culture and community wisdom'
+    },
+    {
+      id: 22,
+      title: 'Elder Community Leader',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/cultural-elder-portrait-3.webp',
+      description: 'Documenting the dignity and heritage of community elders'
+    },
+    {
       id: 69,
       title: 'Pastoral Communities and Climate Adaptation',
       category: 'environment',
