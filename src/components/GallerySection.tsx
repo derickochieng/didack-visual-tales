@@ -66,6 +66,46 @@ const GallerySection = () => {
       description: 'Celebrating the joy and potential of young community members'
     },
     {
+      id: 16,
+      title: 'Education Access',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/education-child-writing.webp',
+      description: 'Supporting education for children in underserved communities'
+    },
+    {
+      id: 17,
+      title: 'Learning by Lamplight',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/education-student-studying.webp',
+      description: 'Dedicated students studying despite limited resources'
+    },
+    {
+      id: 18,
+      title: 'Committed to Learning',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/education-child-learning.webp',
+      description: 'Children pursuing education in challenging circumstances'
+    },
+    {
+      id: 19,
+      title: 'Healthcare for All',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/healthcare-child-examination.webp',
+      description: 'Providing essential healthcare services to communities in need'
+    },
+    {
+      id: 20,
+      title: 'Wisdom and Heritage',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/cultural-elder-portrait.webp',
+      description: 'Honoring the cultural heritage and wisdom of community elders'
+    },
+    {
       id: 69,
       title: 'Pastoral Communities and Climate Adaptation',
       category: 'environment',
