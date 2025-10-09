@@ -130,6 +130,22 @@ const GallerySection = () => {
       description: 'Celebrating and preserving indigenous cultural traditions and heritage'
     },
     {
+      id: 26,
+      title: 'Sharing Water, Sharing Hope',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/humanitarian-water-sharing.webp',
+      description: 'Mother providing water to her child in challenging conditions'
+    },
+    {
+      id: 27,
+      title: 'Maternal Care and Resilience',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/humanitarian-mother-children.webp',
+      description: 'Young mother carrying children and essential supplies in displacement'
+    },
+    {
       id: 69,
       title: 'Pastoral Communities and Climate Adaptation',
       category: 'environment',
