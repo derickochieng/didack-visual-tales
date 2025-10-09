@@ -90,6 +90,46 @@ const GallerySection = () => {
       description: 'Honoring the cultural heritage and wisdom of community elders'
     },
     {
+      id: 21,
+      title: 'Refugee Camp Support',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/humanitarian-refugee-camp.webp',
+      description: 'Aid workers providing essential support to children in refugee camps'
+    },
+    {
+      id: 22,
+      title: 'Daily Life Challenges',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/humanitarian-washing-dishes.webp',
+      description: 'Documenting the daily challenges and resilience in underserved communities'
+    },
+    {
+      id: 23,
+      title: 'Water Access Mission',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/humanitarian-water-carriers.webp',
+      description: 'Children working together to transport water in communities with limited access'
+    },
+    {
+      id: 24,
+      title: 'Water Security',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/humanitarian-water-access.webp',
+      description: 'Families carrying essential water supplies in challenging conditions'
+    },
+    {
+      id: 25,
+      title: 'Cultural Heritage Preservation',
+      category: 'humanitarian',
+      type: 'photo',
+      image: '/lovable-uploads/humanitarian-cultural-heritage.webp',
+      description: 'Celebrating and preserving indigenous cultural traditions and heritage'
+    },
+    {
       id: 69,
       title: 'Pastoral Communities and Climate Adaptation',
       category: 'environment',
