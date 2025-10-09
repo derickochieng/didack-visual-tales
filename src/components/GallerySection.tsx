@@ -67,27 +67,11 @@ const GallerySection = () => {
     },
     {
       id: 16,
-      title: 'Education Access',
-      category: 'humanitarian',
-      type: 'photo',
-      image: '/lovable-uploads/education-child-writing.webp',
-      description: 'Supporting education for children in underserved communities'
-    },
-    {
-      id: 17,
       title: 'Learning by Lamplight',
       category: 'humanitarian',
       type: 'photo',
       image: '/lovable-uploads/education-student-studying.webp',
       description: 'Dedicated students studying despite limited resources'
-    },
-    {
-      id: 18,
-      title: 'Committed to Learning',
-      category: 'humanitarian',
-      type: 'photo',
-      image: '/lovable-uploads/education-child-learning.webp',
-      description: 'Children pursuing education in challenging circumstances'
     },
     {
       id: 19,
