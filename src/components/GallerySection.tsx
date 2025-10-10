@@ -1,19 +1,21 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Camera, Play, ArrowRight } from 'lucide-react';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Camera, Play, ArrowRight, X } from 'lucide-react';
 
 const GallerySection = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [isCarouselOpen, setIsCarouselOpen] = useState(false);
 
   const categories = [
-    { id: 'all', name: 'All Work' },
     { id: 'humanitarian', name: 'Humanitarian Work' },
     { id: 'farming', name: 'Farming' },
     { id: 'corporate-events', name: 'Corporate Events' },
     { id: 'conferences', name: 'Conferences' },
     { id: 'environment', name: 'Environment & Climate' },
-    { id: 'real-estate', name: 'Real Estate' }
+    { id: 'education', name: 'Education' }
   ];
 
   const galleryItems = [
@@ -355,43 +357,27 @@ const GallerySection = () => {
     },
     {
       id: 77,
-      title: 'Luxury Villa with Pool',
-      category: 'real-estate',
+      title: 'Learning by Lamplight',
+      category: 'education',
       type: 'photo',
-      image: '/lovable-uploads/2680901a-c6f7-4398-bb2c-506967722ab0.png',
-      description: 'Stunning white villa with swimming pool and tropical landscaping'
+      image: '/lovable-uploads/education-student-studying.webp',
+      description: 'Dedicated students studying despite limited resources'
     },
     {
       id: 78,
-      title: 'Modern Luxury Bathroom',
-      category: 'real-estate',
+      title: 'Young Learner',
+      category: 'education',
       type: 'photo',
-      image: '/lovable-uploads/443a8832-bbfb-44a1-9bf5-8a6888627586.png',
-      description: 'Contemporary bathroom design with premium fixtures and finishes'
+      image: '/lovable-uploads/education-child-learning.webp',
+      description: 'Child engaged in learning activities'
     },
     {
       id: 79,
-      title: 'Contemporary Home with Pool',
-      category: 'real-estate',
+      title: 'Writing Skills Development',
+      category: 'education',
       type: 'photo',
-      image: '/lovable-uploads/960f7b3d-7555-4c98-8092-cda4b50393f1.png',
-      description: 'Modern family home featuring pool and beautifully landscaped gardens'
-    },
-    {
-      id: 80,
-      title: 'Luxury Interior Design',
-      category: 'real-estate',
-      type: 'photo',
-      image: '/lovable-uploads/661a09ac-dcea-4187-abb9-b2939aad7536.png',
-      description: 'Sophisticated interior space with geometric design elements'
-    },
-    {
-      id: 81,
-      title: 'Premium Commercial Space',
-      category: 'real-estate',
-      type: 'photo',
-      image: '/lovable-uploads/0ea73351-5705-48d4-89ea-3ee7938182db.png',
-      description: 'High-end commercial interior with wood paneling and modern aesthetics'
+      image: '/lovable-uploads/education-child-writing.webp',
+      description: 'Young student developing writing and literacy skills'
     },
     {
       id: 6,
@@ -459,9 +445,22 @@ const GallerySection = () => {
     }
   ];
 
-  const filteredItems = activeCategory === 'all' 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeCategory);
+  // Get one representative image per category
+  const getCategoryThumbnail = (categoryId: string) => {
+    return galleryItems.find(item => item.category === categoryId);
+  };
+
+  // Get all images for a category
+  const getCategoryImages = (categoryId: string) => {
+    return galleryItems.filter(item => item.category === categoryId);
+  };
+
+  const handleCategoryClick = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    setIsCarouselOpen(true);
+  };
+
+  const selectedImages = selectedCategory ? getCategoryImages(selectedCategory) : [];
 
   return (
     <section id="gallery" className="section-padding bg-gray-900">
@@ -475,44 +474,88 @@ const GallerySection = () => {
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              variant={activeCategory === category.id ? "default" : "outline"}
-              className={activeCategory === category.id 
-                ? "bg-white text-black hover:bg-gray-200" 
-                : "border-white text-white hover:bg-white hover:text-black"
-              }
-            >
-              {category.name}
-            </Button>
-          ))}
+        {/* Category Thumbnails Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categories.map((category, index) => {
+            const thumbnail = getCategoryThumbnail(category.id);
+            if (!thumbnail) return null;
+            
+            return (
+              <div 
+                key={category.id}
+                onClick={() => handleCategoryClick(category.id)}
+                className="group relative overflow-hidden rounded-lg bg-gray-800 hover-lift animate-scale-in cursor-pointer"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="aspect-square relative overflow-hidden">
+                  <img 
+                    src={thumbnail.image}
+                    alt={category.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  
+                  {/* Overlay with category name */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="text-center">
+                      <h3 className="text-white text-2xl font-playfair font-bold mb-2">{category.name}</h3>
+                      <p className="text-gray-200 text-sm">Click to view gallery</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Category label at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <h3 className="text-white text-xl font-playfair font-bold">{category.name}</h3>
+                  <p className="text-gray-300 text-sm">{getCategoryImages(category.id).length} photos</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item, index) => (
-            <div 
-              key={item.id}
-              className="group relative overflow-hidden rounded-lg bg-gray-800 hover-lift animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="aspect-square relative overflow-hidden">
-                <img 
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
+        {/* Carousel Dialog */}
+        <Dialog open={isCarouselOpen} onOpenChange={setIsCarouselOpen}>
+          <DialogContent className="max-w-5xl bg-gray-900 border-gray-800 p-0">
+            <div className="relative">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute right-4 top-4 z-50 text-white hover:bg-white/20"
+                onClick={() => setIsCarouselOpen(false)}
+              >
+                <X className="h-6 w-6" />
+              </Button>
+              
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {selectedImages.map((item) => (
+                    <CarouselItem key={item.id}>
+                      <div className="p-8">
+                        <div className="relative aspect-video overflow-hidden rounded-lg">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-contain bg-black"
+                          />
+                        </div>
+                        <div className="mt-6 text-center">
+                          <h3 className="text-2xl font-playfair font-bold text-white mb-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-gray-300">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-4 bg-white/20 border-white/20 text-white hover:bg-white/30" />
+                <CarouselNext className="right-4 bg-white/20 border-white/20 text-white hover:bg-white/30" />
+              </Carousel>
             </div>
-          ))}
-        </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
