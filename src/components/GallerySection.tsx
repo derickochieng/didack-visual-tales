@@ -515,8 +515,8 @@ const GallerySection = () => {
 
         {/* Carousel Dialog */}
         <Dialog open={isCarouselOpen} onOpenChange={setIsCarouselOpen}>
-          <DialogContent className="max-w-6xl bg-gray-900 border-gray-800 p-0 overflow-hidden">
-            <div className="relative w-full">
+          <DialogContent className="max-w-6xl bg-gray-900 border-gray-800 p-0 overflow-hidden h-[75vh] md:h-[80vh]">
+            <div className="relative w-full h-full">
               <Button
                 variant="ghost"
                 size="icon"
@@ -527,24 +527,24 @@ const GallerySection = () => {
               </Button>
               
               <Carousel 
-                className="w-full"
+                className="w-full h-full"
                 opts={{
                   loop: true,
                   align: "start"
                 }}
               >
-                <CarouselContent className="ml-0">
+                <CarouselContent className="ml-0 h-full">
                   {selectedImages.map((item) => (
-                    <CarouselItem key={item.id} className="pl-0">
-                      <div className="p-8 md:p-12">
-                        <div className="relative aspect-video overflow-hidden rounded-lg bg-black">
+                    <CarouselItem key={item.id} className="pl-0 h-full">
+                      <div className="p-6 md:p-10 h-full flex flex-col">
+                        <div className="relative flex-1 overflow-hidden rounded-lg bg-black flex items-center justify-center">
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="w-full h-full object-contain"
+                            className="max-h-[60vh] md:max-h-[70vh] w-auto h-auto object-contain"
                           />
                         </div>
-                        <div className="mt-6 text-center px-4">
+                        <div className="mt-4 md:mt-6 text-center px-4">
                           <h3 className="text-xl md:text-2xl font-playfair font-bold text-white mb-2">
                             {item.title}
                           </h3>
