@@ -550,8 +550,8 @@ const GallerySection = () => {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-4 bg-white/20 border-white/20 text-white hover:bg-white/30" />
-                <CarouselNext className="right-4 bg-white/20 border-white/20 text-white hover:bg-white/30" />
+                <CarouselPrevious className="left-2 md:left-4 bg-white/90 border-white/20 text-gray-900 hover:bg-white shadow-lg" />
+                <CarouselNext className="right-2 md:right-4 bg-white/90 border-white/20 text-gray-900 hover:bg-white shadow-lg" />
               </Carousel>
             </div>
           </DialogContent>
