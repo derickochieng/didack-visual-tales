@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { X } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 
 const Gallery = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('all');
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [isCarouselOpen, setIsCarouselOpen] = useState(false);
 
   useEffect(() => {
     const category = searchParams.get('category');
@@ -174,6 +179,13 @@ const Gallery = () => {
     }
   };
 
+  const handleImageClick = (index: number) => {
+    setSelectedImageIndex(index);
+    setIsCarouselOpen(true);
+  };
+
+  const filteredImages = getFilteredImages();
+
   const categories = [
     { key: 'all', label: 'All Work' },
     { key: 'humanitarian', label: 'Humanitarian Works' },
@@ -229,10 +241,11 @@ const Gallery = () => {
       <section className="section-padding bg-black">
         <div className="container-custom">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {getFilteredImages().map((image, index) => (
+            {filteredImages.map((image, index) => (
               <div 
                 key={index}
-                className="group relative overflow-hidden rounded-lg hover-lift animate-scale-in"
+                onClick={() => handleImageClick(index)}
+                className="group relative overflow-hidden rounded-lg hover-lift animate-scale-in cursor-pointer"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <div className="aspect-square">
@@ -248,6 +261,43 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+
+      {/* Carousel Dialog */}
+      <Dialog open={isCarouselOpen} onOpenChange={setIsCarouselOpen}>
+        <DialogContent className="max-w-7xl w-[95vw] h-[90vh] bg-black border-none p-0">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute right-4 top-4 z-50 text-white hover:bg-white/20 rounded-full"
+            onClick={() => setIsCarouselOpen(false)}
+          >
+            <X className="h-6 w-6" />
+          </Button>
+          
+          <Carousel 
+            className="w-full h-full"
+            opts={{
+              loop: true,
+              align: "center",
+              startIndex: selectedImageIndex || 0
+            }}
+          >
+            <CarouselContent className="ml-0 h-full">
+              {filteredImages.map((image, index) => (
+                <CarouselItem key={index} className="pl-0 h-full flex items-center justify-center">
+                  <img
+                    src={image.url}
+                    alt={image.title}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-6 bg-white hover:bg-white/90 border-none text-gray-900 h-12 w-12 rounded-full" />
+            <CarouselNext className="right-6 bg-white hover:bg-white/90 border-none text-gray-900 h-12 w-12 rounded-full" />
+          </Carousel>
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>
