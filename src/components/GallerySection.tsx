@@ -536,12 +536,12 @@ const GallerySection = () => {
                 <CarouselContent className="ml-0 h-full">
                   {selectedImages.map((item) => (
                     <CarouselItem key={item.id} className="pl-0 h-full">
-                      <div className="p-6 md:p-10 h-full flex flex-col">
-                        <div className="relative flex-1 overflow-hidden rounded-lg bg-black flex items-center justify-center">
+                      <div className="h-full flex flex-col justify-center p-4 md:p-8">
+                        <div className="relative w-full flex items-center justify-center" style={{ maxHeight: 'calc(75vh - 120px)' }}>
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="max-h-[60vh] md:max-h-[70vh] w-auto h-auto object-contain"
+                            className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
                           />
                         </div>
                         <div className="mt-4 md:mt-6 text-center px-4">
