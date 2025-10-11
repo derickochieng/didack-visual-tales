@@ -515,8 +515,8 @@ const GallerySection = () => {
 
         {/* Carousel Dialog */}
         <Dialog open={isCarouselOpen} onOpenChange={setIsCarouselOpen}>
-          <DialogContent className="max-w-6xl bg-gray-900 border-gray-800 p-0 overflow-hidden h-[75vh] md:h-[80vh]">
-            <div className="relative w-full h-full">
+          <DialogContent className="max-w-5xl bg-gray-900 border-gray-800 p-0 overflow-hidden">
+            <div className="relative w-full">
               <Button
                 variant="ghost"
                 size="icon"
@@ -527,24 +527,25 @@ const GallerySection = () => {
               </Button>
               
               <Carousel 
-                className="w-full h-full"
+                className="w-full"
                 opts={{
                   loop: true,
-                  align: "start"
+                  align: "center"
                 }}
               >
-                <CarouselContent className="ml-0 h-full">
+                <CarouselContent className="ml-0">
                   {selectedImages.map((item) => (
-                    <CarouselItem key={item.id} className="pl-0 h-full">
-                      <div className="h-full flex flex-col justify-center p-4 md:p-8">
-                        <div className="relative w-full flex items-center justify-center" style={{ maxHeight: 'calc(75vh - 120px)' }}>
+                    <CarouselItem key={item.id} className="pl-0">
+                      <div className="flex flex-col items-center p-6 md:p-8">
+                        <div className="relative w-full flex items-center justify-center mb-6" style={{ height: '60vh', maxHeight: '600px' }}>
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
+                            className="max-w-full max-h-full object-contain rounded-lg"
+                            style={{ width: 'auto', height: 'auto' }}
                           />
                         </div>
-                        <div className="mt-4 md:mt-6 text-center px-4">
+                        <div className="text-center px-4 max-w-2xl">
                           <h3 className="text-xl md:text-2xl font-playfair font-bold text-white mb-2">
                             {item.title}
                           </h3>
