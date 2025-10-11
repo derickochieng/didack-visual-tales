@@ -526,7 +526,7 @@ const GallerySection = () => {
             </Button>
             
             <Carousel 
-              className="w-full h-full"
+              className="w-full h-full relative"
               opts={{
                 loop: true,
                 align: "center"
@@ -543,8 +543,8 @@ const GallerySection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-6 bg-white hover:bg-white/90 border-none text-gray-900 h-12 w-12 rounded-full" />
-              <CarouselNext className="right-6 bg-white hover:bg-white/90 border-none text-gray-900 h-12 w-12 rounded-full" />
+              <CarouselPrevious className="left-6 bg-white hover:bg-white/90 border-none text-gray-900 h-12 w-12 rounded-full z-50" />
+              <CarouselNext className="right-6 bg-white hover:bg-white/90 border-none text-gray-900 h-12 w-12 rounded-full z-50" />
             </Carousel>
           </DialogContent>
         </Dialog>
