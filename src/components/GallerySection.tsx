@@ -515,52 +515,37 @@ const GallerySection = () => {
 
         {/* Carousel Dialog */}
         <Dialog open={isCarouselOpen} onOpenChange={setIsCarouselOpen}>
-          <DialogContent className="max-w-5xl bg-gray-900 border-gray-800 p-0 overflow-hidden">
-            <div className="relative w-full">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute right-4 top-4 z-50 text-white hover:bg-white/20"
-                onClick={() => setIsCarouselOpen(false)}
-              >
-                <X className="h-6 w-6" />
-              </Button>
-              
-              <Carousel 
-                className="w-full"
-                opts={{
-                  loop: true,
-                  align: "center"
-                }}
-              >
-                <CarouselContent className="ml-0">
-                  {selectedImages.map((item) => (
-                    <CarouselItem key={item.id} className="pl-0">
-                      <div className="flex flex-col items-center p-6 md:p-8">
-                        <div className="relative w-full flex items-center justify-center mb-6" style={{ height: '60vh', maxHeight: '600px' }}>
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="max-w-full max-h-full object-contain rounded-lg"
-                            style={{ width: 'auto', height: 'auto' }}
-                          />
-                        </div>
-                        <div className="text-center px-4 max-w-2xl">
-                          <h3 className="text-xl md:text-2xl font-playfair font-bold text-white mb-2">
-                            {item.title}
-                          </h3>
-                          <p className="text-gray-300 text-sm md:text-base">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="left-4 bg-white/90 hover:bg-white border-none text-gray-900 h-10 w-10" />
-                <CarouselNext className="right-4 bg-white/90 hover:bg-white border-none text-gray-900 h-10 w-10" />
-              </Carousel>
-            </div>
+          <DialogContent className="max-w-7xl w-[95vw] h-[90vh] bg-black border-none p-0">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute right-4 top-4 z-50 text-white hover:bg-white/20 rounded-full"
+              onClick={() => setIsCarouselOpen(false)}
+            >
+              <X className="h-6 w-6" />
+            </Button>
+            
+            <Carousel 
+              className="w-full h-full"
+              opts={{
+                loop: true,
+                align: "center"
+              }}
+            >
+              <CarouselContent className="ml-0 h-full">
+                {selectedImages.map((item) => (
+                  <CarouselItem key={item.id} className="pl-0 h-full flex items-center justify-center">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-6 bg-white hover:bg-white/90 border-none text-gray-900 h-12 w-12 rounded-full" />
+              <CarouselNext className="right-6 bg-white hover:bg-white/90 border-none text-gray-900 h-12 w-12 rounded-full" />
+            </Carousel>
           </DialogContent>
         </Dialog>
       </div>
